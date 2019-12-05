@@ -1,0 +1,27 @@
+
+<div lass="container">
+    <div class="row">
+        <div class="col-md-9 card">
+            <div class="card-header">
+                <h2>Aqui se ven los post de todos</h2> 
+                <div class="text-right">
+                    <a routerLink="/Agregar" class="btn btn-primary">Agregar nuevo post</a>
+                </div>
+            </div>
+            <div class="card-body" >
+                <div class="posters row" *ngFor="let pt of post">
+                    <div class="col-md-10">
+                        <p>{{pt.id_usuarios}}</p>
+                        <p><b>Titulo: </b>{{pt.t_com}}</p>
+                        <p>{{pt.comentario}}</p>
+                    </div>
+                    <div class="col-md-2">
+                        <button (click)="eliminarComentario(pt.id_com)" class="btn btn-danger">Eliminar</button>
+                        <br>
+                        <button (click)="editarComentario(pt.id_com)" class="btn btn-warning">Editar</button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
