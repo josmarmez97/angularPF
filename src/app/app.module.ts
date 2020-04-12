@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 //agregamos el servicio, el cual se podra consumir en toda nuestra aplicacion
 import {ComentariosService} from './service/comentarios.service';
 import {PostService} from './post/services/post.service';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {PostService} from './post/services/post.service';
     PostComponent,
     AgregarComponent,
     EditarComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

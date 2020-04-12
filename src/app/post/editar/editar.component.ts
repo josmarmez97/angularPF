@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PostService } from '../services/post.service';
 import { ActivatedRoute } from '@angular/router';
+import { Post } from '../dto/post';
 
 
 @Component({
@@ -10,10 +11,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./editar.component.css']
 })
 export class EditarComponent implements OnInit {
-
+  texte: string = this.activo.snapshot.paramMap.get('id');
+  numero : number = parseInt(this.texte);
   editarPost = new FormGroup(
   {
-    id_com: new FormControl('',Validators.required),
+    id_com: new FormControl(this.numero,Validators.required),
+   id_usuarios: new FormControl(1,Validators.required),
+    t_com: new FormControl('',Validators.required),
     comentario : new FormControl('',Validators.required)
   }
   );
@@ -29,6 +33,9 @@ export class EditarComponent implements OnInit {
 
   actualizar()
   {
-
+    var edit: Post = this.editarPost.value;
+    var id = this.activo.snapshot.paramMap.get('id');
+    this.service.ActualizarComentario(edit,id).subscribe(
+    );
   }
 }

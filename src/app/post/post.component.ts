@@ -28,9 +28,11 @@ export class PostComponent implements OnInit {
     );
   }
   
-  eliminarComentario(identificador)
+  eliminarComentario(id)
   {
-    console.log('evento Eliminar');
+    this.postsService.EliminarComentario(id).subscribe();
+    console.log('eliminar');
+    this.router.navigate(['home'])
     
   }
 

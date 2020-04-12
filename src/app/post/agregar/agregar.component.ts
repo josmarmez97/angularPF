@@ -41,10 +41,4 @@ export class AgregarComponent implements OnInit {
       }     
     );
   }
-
-  agregarComentario()
-  {
-    console.log('evento Agregar');
-  }
-
 }

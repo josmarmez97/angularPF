@@ -6,12 +6,17 @@ import { AgregarComponent } from './post/agregar/agregar.component';
 import { EditarComponent } from './post/editar/editar.component';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
   {
     path: '',
     component: LoginComponent
+  },
+  {
+    path: 'Register',
+    component : RegisterComponent
   },
   {
     path:'home',
